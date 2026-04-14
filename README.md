@@ -1,5 +1,7 @@
 # Stream Cipher with Custom PRNG
 
+Author: Drei Abmab
+
 ## Overview
 This project demonstrates a custom implementation of a **stream cipher** using a **pseudorandom number generator (PRNG)**. It showcases how encryption and decryption work using XOR operations, along with a more secure approach to key generation using **nonce-based seed derivation** and **SHA-256 hashing**.
 
