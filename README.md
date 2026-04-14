@@ -60,5 +60,45 @@ seed = SHA256(nonce || secret) mod 2^32
 ```
 - Prevents keystream reuse → critical for stream cipher security
 
+---
+
+### 5. Secure Message Format
+```python
+[ nonce | ciphertext ]
+```
+- Receiver:
+    1. Extracts nonce
+    2. Recomputes seed
+    3. Regenerates keystream
+    4. Decrypts message
+
+--- 
+
+## Example Output
+#### Encryption
+```python
+Plaintext: Hello Cryptography
+Cipher (hex): c93f7df7e2fc1b246255ca2ebc3f1fb20b9a
+```
+#### Decryption
+```python
+Recovered Plaintext: Hello Cryptography
+```
+#### Secure Decryption with Derived Seed
+```python
+Derived seed: 42847799
+Plaintext: this is a message.
+```
+
+# Security Notes
+- This is a learning implementation, not production-ready
+- Custom PRNGs are not cryptographically secure
+- XOR encryption is only secure if:
+    - Keystream is truly random
+    - Keystream is never reused
+- Using nonce + hashing improves security but does not replace standard cryptographic algorithms
+
+
+
 
 
