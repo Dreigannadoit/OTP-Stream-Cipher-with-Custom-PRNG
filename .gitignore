@@ -1,3 +1,9 @@
 .venv/
+console/
+mortem/
+non_aperire/
 
 /BAMBA_Lab 7-ITN108.ipynb
+/secrets.py
+/requirements.txt
+/memento_mori.py
